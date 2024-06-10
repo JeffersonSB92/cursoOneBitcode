@@ -1,0 +1,65 @@
+// Teste de Velocidade
+// Escreva um programa em javascript que permita inserir o nome e a velocidade de dois veículos e exiba na tela uma mensagem dizendo qual dos dois é mais rápido (ou que as velocidades são iguais se este for o caso)
+
+const veic1 = prompt("Digite o nome do primeiro veículo:");
+const veloc1 = prompt("Digite a velocidade do primeiro veículo:");
+const veic2 = prompt("Digite o nome do segundo veículo:");
+const veloc2 = prompt("Digite a velocidade do segundo veículo:");
+
+if (veloc1 > veloc2) {
+    alert(`${veic1} foi mais rápido`)
+} else if (veloc2 > veloc1) {
+    alert(`${veic2} foi mais rápido`)
+} else {
+    alert("As velocidades foram iguais")
+}
+
+// Cálculo de Dano
+// Escreva um programa que permita inserir o nome e o poder de ataque de um personagem, depois o nome, a quantidade de pontos de vida, o poder de defesa de outro personagem e se ele possui um escudo, e então calcule a quantidade de dano causado 
+// baseado nas seguintes regras:
+// Se o poder de ataque for maior do que a defesa e o defensor não possuir um escudo, o dano causado será igual a diferença entre o ataque e a defesa.
+// Se o poder de ataque for maior do que a defesa e o defensor possuir um escudo, o dano causado será igual a metade da diferença entre o ataque e a defesa.
+// Se o poder de ataque for menor ou igual a defesa, o dano causado será 0.
+// Por fim, o programa deve subtrair a quantidade de dano da quantidade de pontos de vida do personagem defensor e exibir na tela a quantidade de dano e as informações atualizadas de ambos os personagens.
+
+let nomeAtaque = prompt("Digite o nome do atacante:");
+let poderAtaque = prompt("Digite o poder do ataque:");
+let nomeDefesa = prompt("Digite o nome do defensor:");
+let pontosVida = prompt("Digite a quantia de pontos de vida do defensor:");
+let poderDefesa = prompt("Digite o poder de defesa:")
+let escudo = prompt("O defensor possui escudo? Digite SIM ou NÃO:");
+let dano = null;
+
+if (poderAtaque > poderDefesa) {
+    if (escudo === "NÃO") {
+        dano = poderAtaque - poderDefesa;
+        pontosVida = pontosVida - dano;
+        alert(`Personagem ${nomeDefesa} está com ${pontosVida} pontos`)
+    } else {
+        dano = (poderAtaque - poderDefesa) / 2;
+        pontosVida = pontosVida - dano;
+        alert(`Personagem ${nomeDefesa} está com ${pontosVida} pontos`)
+    }
+} else {
+    dano = 0;
+    pontosVida = pontosVida - dano;
+    alert(`Personagem ${nomeDefesa} está com ${pontosVida} pontos`)
+}
+
+
+
+//RESOLUÇÃO DO PROFESSOR
+if (poderDeAtaque > poderDeDefesa && possuiEscudo === "Não") {
+    danoCausado = poderDeAtaque - poderDeDefesa
+  } else if (poderDeAtaque > poderDeDefesa && possuiEscudo === "Sim") {
+    danoCausado = (poderDeAtaque - poderDeDefesa) / 2
+  }
+  
+  pontosDeVida -= danoCausado
+
+alert(atacante + " causou " + danoCausado + " pontos de dano em " + defensor)
+alert(
+  atacante + "\nPoder de ataque: " + poderDeAtaque + "\n\n" +
+  defensor + "\nPontos de vida: " + pontosDeVida +
+  "\nPoder de defesa: " + poderDeDefesa + "\nPossui escudo: " + possuiEscudo
+)

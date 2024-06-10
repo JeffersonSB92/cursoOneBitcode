@@ -1,0 +1,53 @@
+== esse operador só checa se os valores comparados são iguais, não fazendo a checagem do tipo
+=== já esse valida que tanto valor quanto tipo são iguais
+
+EX:
+3 == 3 retornará TRUE
+4 == 3 retornará FALSE
+3 * 3 + 1 == 10 retornará TRUE
+10 === 10 retornará TRUE
+10 === 11 retornará FALSE
+10 == "10" retornará TRUE
+10 === "10" retornará FALSE
+
+
+
+!= esse operador só checa se os valores comparados são diferentes, não fazendo a checagem do tipo
+=== já esse valida que tanto valor quanto tipo são diferentes
+
+EX:
+3 != 3 retornará FALSE
+5 != 3 retornará TRUE
+5 != "5" retornará FALSE
+5 !== "5" retornará TRUE
+
+
+
+Já os operadores >, >=, < e <= são autoexplicativos
+
+
+
+
+OPERADORES LÓGICOS
+
+E (AND) 
+    - Só é verdadeiro se ambos forem TRUE
+    - Operador &&
+    - true && true === true
+    - true && false === false
+    - false && true === false
+    - false && false === false
+OU (OR)
+    - Só é falso se ambos forem FALSE
+    - Operador ||
+    - true || true === true
+    - true || false === true
+    - false || true === true
+    - false || false === false
+NÃO (NOT)
+    - Inverte o resultado (De verdadeiro para falso, e vice-versa)
+    - Operador !
+    - !true === false
+    - !false === true
+    - !1 === 0
+    - !0 === 1
