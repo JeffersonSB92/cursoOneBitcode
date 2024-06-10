@@ -6,28 +6,24 @@
 // de dinheiro e as opções. A opção de remover dinheiro deve fazer o mesmo, porém subtraindo o valor. 
 // A opção de sair deve encerrar o programa.
 
-let saldo = 0
+let saldo = parseFloat(prompt("Qual seu saldo inicial?"))
 let opcao = ""
 
 do {
-    saldo = prompt("Qual seu saldo inicial?")
-    opcao = prompt(`Seu saldo é: ${saldo}, você deseja:\n1 - Adicionar Dinheiro\n2 - Remover Dinheiro\n3 - Sair`)
+    opcao = prompt(`Seu saldo é ${saldo}, você deseja:\n1 - Adicionar Dinheiro\n2 - Remover Dinheiro\n3 - Sair`)
     
     switch (opcao) {
         case "1":
-          let add = prompt("Qual valor deseja adicionar?")
+          let add = parseFloat(prompt("Qual valor deseja adicionar?"))
           saldo += add
-          alert(opcao)
           break
-        case "2":
-          alert("Você escolheu a opção 2.")
+          case "2":
+          let sub = parseFloat(prompt("Qual valor deseja subtrair?"))
+          saldo -= sub
           break
         case "3":
-          alert("Você escolheu a opção 3.")
           break
         default:
           alert("Entrada inválida! Escolha uma das cinco opções.")
     }
-
-
 } while (opcao !== "3")
